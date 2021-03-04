@@ -1,13 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+
 const Notification = ({ message }) => {
   return (
     <div>
       <h2>Statistic</h2>
-      <h4>{message}</h4>
+      <h3>{message}</h3>
     </div>
   );
 };
+
 Notification.propTypes = {
   message: PropTypes.string.isRequired,
 };
