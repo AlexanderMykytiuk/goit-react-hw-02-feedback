@@ -8,16 +8,13 @@ html {
     box-sizing: inherit;
   }
   .container {
-    max-width: 500px;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 600px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
+    margin-top: 60px;
   
-    border-top: 3px solid rgb(226, 145, 23);
-    border-left: 3px solid rgb(226, 212, 23);
-    border-bottom: 3px solid rgb(23, 226, 158);
-    border-right: 3px solid rgb(59, 218, 54);
+    border: 3px solid rgb(228, 25, 11);
     border-radius: 5px;
   }
