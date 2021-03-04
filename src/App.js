@@ -1,6 +1,6 @@
 import React from "react";
 // import Statistics from './Components/Statistics';
-import FeedbackOptions from './Components/FeedbackOptions';
+import FeedbackOptions from "./Components/FeedbackOptions";
 import Section from "./Components/Section";
 // import Notification from './Components/Notification';
 import Container from "./Components/Container/Container";
@@ -13,14 +13,27 @@ class App extends React.Component {
   };
 
   keysState = () => {
-    let Ke
-  }
+    let keysState = Object.keys(this.state);
+    return keysState;
+  };
+
+  onLeavelFeedbeack = (e) => {
+    let assessment = e.target.name;
+    this.setState((prevState) => {
+      return {
+        [assessment]: prevState[assessment] + 1,
+      };
+    });
+  };
+
   render() {
     const { good, neutral, bed } = this.state;
     return (
       <Container>
         <Section title="Please leave feedback">
-          <FeedbackOptions options {} onLeavelFeedbeack {}
+          <FeedbackOptions
+            options={this.keysState}
+            onLeavelFeedbeack={this.onLeavelFeedbeack}
           />
         </Section>
       </Container>
