@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 // import Statistics from './Components/Statistics';
-// import FeedbackOptions from './Components/FeedbackOptions';
-// import Section from './Components/Section';
+import FeedbackOptions from './Components/FeedbackOptions';
+import Section from "./Components/Section";
 // import Notification from './Components/Notification';
-import Container from './Components/Container/Container';
-
+import Container from "./Components/Container/Container";
 
 class App extends React.Component {
   state = {
@@ -13,29 +12,23 @@ class App extends React.Component {
     bed: 0,
   };
 
+  keysState = () => {
+    let Ke
+  }
   render() {
     const { good, neutral, bed } = this.state;
     return (
-    
-
-    <Container>
-
-    </Container>
-  )  
-  };
-  
+      <Container>
+        <Section title="Please leave feedback">
+          <FeedbackOptions options {} onLeavelFeedbeack {}
+          />
+        </Section>
+      </Container>
+    );
+  }
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
 
 // class App extends React.Component {
 //   state = {
