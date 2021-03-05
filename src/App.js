@@ -12,14 +12,9 @@ class App extends React.Component {
     bad: 0,
   };
 
-  keysState = () => {
-    let keysState = Object.keys(this.state);
-    return keysState;
-  };
-
-  onLeavelFeedbeack = (e) => {
+  onLeavelFeedback = e => {
     let assessment = e.target.name;
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return {
         [assessment]: prevState[assessment] + 1,
       };
@@ -30,8 +25,11 @@ class App extends React.Component {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
-
-  countFeedbackPercentage = () => {
+  keysState = () => {
+    let keysState = Object.keys(this.state);
+    return keysState;
+  };
+  countPositiveFeedbackPercentage = () => {
     const { good, neutral, bad } = this.state;
     return good === 0 ? (
       <span>0 %</span>
@@ -47,8 +45,8 @@ class App extends React.Component {
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.keysState}
-            onLeavelFeedbeack={this.onLeavelFeedbeack}
+            options={this.keysState()}
+            onLeavelFeedback={this.onLeavelFeedback}
           />
         </Section>
         {totalFeedback === 0 ? (
@@ -60,7 +58,7 @@ class App extends React.Component {
               neutral={neutral}
               bad={bad}
               total={this.countTotalFeedback()}
-              percentage={this.countFeedbackPercentage()}
+              percentage={this.countPositiveFeedbackPercentage()}
             />
           </Section>
         )}
@@ -68,5 +66,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

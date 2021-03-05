@@ -4,25 +4,25 @@ import styles from "./FeedbackOptions.module.css";
 
 const FeedbackOptions = ({ options, onLeavelFeedback }) => {
   return (
-    <div>
+    <>
       {options.map((option) => (
         <button
           className={styles[option]}
+          key={option}
+          onClick={onLeavelFeedback}
           type="button"
           name={option}
-          onClick={onLeavelFeedback}
-          key={option}
         >
           {option}
         </button>
       ))}
-    </div>
+    </>
   );
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.func.isRequired,
-  onLeavelFeedback: PropTypes.array.isRequired,
+  options: PropTypes.array.isRequired,
+  onLeavelFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;

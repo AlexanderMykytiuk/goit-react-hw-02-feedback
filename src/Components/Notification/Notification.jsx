@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 const Notification = ({ message }) => {
   return (
-    <div>
+    <>
       <h2>Statistic</h2>
       <h3>{message}</h3>
-    </div>
+    </>
   );
 };
 

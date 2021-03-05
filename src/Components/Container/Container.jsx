@@ -6,26 +6,9 @@ const Container = ({ children }) => (
   <div className={styles.container} >{ children}</div>
 );
 
-Container.PropTypes = {
+Container.propTypes = {
   children: PropTypes.node,
 };
 
 export default Container;
 
-
-
-
-
-
-
-
-
-// const Container = ({ children }) => (
-//   <div className={styles.container}>{children}</div>
-// );
-
-// Container.propTypes = {
-//   children: PropTypes.node,
-// };
-
-// export default Container;
