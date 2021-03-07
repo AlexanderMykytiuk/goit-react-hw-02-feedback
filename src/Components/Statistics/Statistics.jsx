@@ -16,11 +16,11 @@ const Statistics = ({ good, neutral, bad, total, percentage }) => {
       </p>
       <p>
         Total:
-        <span> {total}</span>
+        <span>{total}</span>
       </p>
       <p className={styles.total}>
         Positive feedback:
-        {percentage}
+        <span> {percentage} %</span> 
       </p>
     </div>
   );

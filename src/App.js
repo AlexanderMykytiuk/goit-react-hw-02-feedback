@@ -12,9 +12,9 @@ class App extends React.Component {
     bad: 0,
   };
 
-  onLeavelFeedback = e => {
-    let assessment = e.target.name;
-    this.setState(prevState => {
+  onLeavelFeedback = (e) => {
+    const assessment = e.target.name;
+    this.setState((prevState) => {
       return {
         [assessment]: prevState[assessment] + 1,
       };
@@ -25,17 +25,17 @@ class App extends React.Component {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
+
   keysState = () => {
-    let keysState = Object.keys(this.state);
+    const keysState = Object.keys(this.state);
     return keysState;
   };
+
   countPositiveFeedbackPercentage = () => {
     const { good, neutral, bad } = this.state;
-    return good === 0 ? (
-      <span>0 %</span>
-    ) : (
-      <span>{Number.parseInt((good * 100) / (good + neutral + bad))}%</span>
-    );
+    return good === 0
+      ? 0
+      : Number.parseInt((good * 100) / (good + neutral + bad));
   };
 
   render() {
